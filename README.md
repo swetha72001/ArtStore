@@ -1,2 +1,2 @@
 # ArtStore
-website for selling drawings
+To understand  between backend and frontend integration 
