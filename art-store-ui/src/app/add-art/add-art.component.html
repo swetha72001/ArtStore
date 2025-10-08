@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <div class="card shadow-lg border-0 p-4 mx-auto" style="max-width: 600px; border-radius: 12px;">
+    <h2 class="text-center mb-4 text-primary">🎨 Add New Artwork</h2>
+
+    <form (ngSubmit)="onSubmit()" #artForm="ngForm">
+
+      <div class="mb-4">
+        <label for="artName" class="form-label fw-semibold mb-2">Art Name</label>
+        <input
+          type="text"
+          id="artName"
+          name="artName"
+          class="form-control form-control-lg"
+          [(ngModel)]="artwork.artName"
+          required
+          placeholder="Enter artwork name"
+        />
+      </div>
+
+      <div class="mb-4">
+        <label for="artist" class="form-label fw-semibold mb-2">Artist</label>
+        <input
+          type="text"
+          id="artist"
+          name="artist"
+          class="form-control form-control-lg"
+          [(ngModel)]="artwork.artist"
+          required
+          placeholder="Enter artist name"
+        />
+      </div>
+   <div class="mb-4">
+        <label for="artUrl" class="form-label fw-semibold mb-2">ArtUrl</label>
+        <textarea
+          id="artUrl"
+          name="artUrl"
+          class="form-control"
+          rows="4"
+          [(ngModel)]="artwork.photoUrl"
+          placeholder="Add a photoUrl of Art..."
+        ></textarea>
+      </div>
+
+      <div class="mb-4">
+        <label for="description" class="form-label fw-semibold mb-2">Description</label>
+        <textarea
+          id="description"
+          name="description"
+          class="form-control"
+          rows="4"
+          [(ngModel)]="artwork.description"
+          placeholder="Write a short description..."
+        ></textarea>
+      </div>
+
+      <div class="text-center mt-4">
+        <button
+          type="submit"
+          class="btn btn-primary btn-lg px-5"
+          [disabled]="loading || !artForm.form.valid"
+        >
+          {{ loading ? 'Saving...' : 'Add Artwork' }}
+        </button>
+      </div>
+
+    </form>
+
+    <div *ngIf="successMessage" class="alert alert-success mt-4 text-center">
+      {{ successMessage }}
+    </div>
+    <div *ngIf="errorMessage" class="alert alert-danger mt-4 text-center">
+      {{ errorMessage }}
+    </div>
+  </div>
+</div>

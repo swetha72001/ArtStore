@@ -1,0 +1,19 @@
+<!-- Navigation bar -->
+<nav class="navbar navbar-expand-lg navbar-light bg-light p-3">
+  <a class="navbar-brand" href="#">Art Store</a>
+  <div class="collapse navbar-collapse">
+    <ul class="navbar-nav me-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/add-art" routerLinkActive="active">Add Artwork</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/list-art" routerLinkActive="active">List Artworks</a>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="container mt-4">
+  <!-- Routed components (AddArtComponent / ListArtComponent) appear here -->
+  <router-outlet></router-outlet>
+</div>
